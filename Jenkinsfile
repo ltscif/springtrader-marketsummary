@@ -17,7 +17,7 @@ pipeline {
       }
       steps {
         container('skaffold') {
-          sh "helm delete --purge marketsummary && skaffold deploy -a image.json -n ${TILLER_NAMESPACE} -v debug"
+          sh "skaffold deploy -a image.json -n ${TILLER_NAMESPACE} -v debug"
         }
       }
     }
